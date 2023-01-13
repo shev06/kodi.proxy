@@ -589,7 +589,11 @@ def Addon_setSetting(self, id, value):
 def Addon_getAddonInfo(self, id):
     return self._info.get(id, "")
 
-xbmcaddon.Addon.__init__ = Addon_init
+#############################################################################################################
+#Need to comment out this line otherwise tvheadend overwites the settings.json for addons in config directory
+##############################################################################################################
+
+#xbmcaddon.Addon.__init__ = Addon_init
 xbmcaddon.Addon.getLocalizedString = Addon_getLocalizedString
 xbmcaddon.Addon.openSettings = Addon_openSettings
 xbmcaddon.Addon.getSetting = Addon_getSetting
